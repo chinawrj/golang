@@ -31,7 +31,10 @@ func animal_speak(a animal) {
 
 func test_array () {
     var a = []int {1, 2, 3, 4, 5};
-    log.Println("array is ", a);
+    var b = a;
+    log.Println("array origin", a);
+    b[1]++;
+    log.Println("array copy", a, b);
 }
 
 func main() {
