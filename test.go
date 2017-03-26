@@ -37,7 +37,23 @@ func test_array () {
     log.Println("array copy", a, b);
 }
 
+func test_struct () {
+    p1 := new(person);
+    p1.speak();
+
+    p2 := person{};
+    p2.speak();
+
+    p3 := person{name: "person name"};
+    p3.speak();
+
+    p4 := person{"person name"};
+    p4.speak();
+}
+
 func main() {
+    test_struct();
+
     p1 := person{"GS"};
     c1 := cat{"Kitty "};
     animal_speak(p1);
