@@ -1,6 +1,9 @@
 package main
 
 import "fmt"
+import "log"
+import "net/http"
+import _ "net/http/pprof"
 
 type animal interface {
     speak()
@@ -27,6 +30,7 @@ func animal_speak(a animal) {
 }
 
 func main() {
+    log.Println(http.ListenAndServe("0.0.0.0:6060", nil))
     p1 := person{"GS"};
     c1 := cat{"Kitty "};
     animal_speak(p1);
